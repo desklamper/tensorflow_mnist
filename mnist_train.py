@@ -19,8 +19,8 @@ MODEL_SAVE_PATH = "./model"
 MODEL_NAME = "model.ckpt"
 
 def train(mnist):
-#    x = tf.placeholder(tf.float32,[None,mnist_inference.INPUT_NODE],name = 'x-input')
-    x = tf.placeholder(tf.float32,[BATCH_SIZE,mnist_inference.IMAGE_SIZE,mnist_inference.IMAGE_SIZE,mnist_inference.NUM_CHANNELS],name = 'x-input')
+    x = tf.placeholder(tf.float32,[None,mnist_inference.INPUT_NODE],name = 'x-input')
+#    x = tf.placeholder(tf.float32,[BATCH_SIZE,mnist_inference.IMAGE_SIZE,mnist_inference.IMAGE_SIZE,mnist_inference.NUM_CHANNELS],name = 'x-input')
     y_ = tf.placeholder(tf.float32,[None,mnist_inference.OUTPUT_NODE],name='y-input')
     regularizer = tf.contrib.layers.l2_regularizer(REGULARAZTION_RATE)
     y = mnist_inference.inference(x,regularizer)
